@@ -1,0 +1,13 @@
+lash: LASH (LASH Audio Session Handler)
+lash:
+lash: LASH is a session management system for JACK and ALSA audio apps
+lash: on GNU/Linux.  It is an implementation of a proposal that originated
+lash: from this discussion.  Its aim is to allow you to have many different
+lash: audio programs running at once, to save their setup, close them down
+lash: and then easily reload the setup at some other time.  LASH doesn't
+lash: deal with any kind of audio data itself;  it just runs programs,
+lash: deals with saving/loading (arbitrary) data and connects different
+lash: kinds of virtual audio ports together (currently JACK and ALSA
+lash: sequencer ports).  It can also be used to move entire sessions between
+lash: computers, or post sessions on the Internet for download.
+lash: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
