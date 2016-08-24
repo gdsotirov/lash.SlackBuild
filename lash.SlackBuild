@@ -5,7 +5,7 @@
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
 
-. ../slack-package.conf
+. ../../slack-package.conf
 
 NAME=lash
 VERSION=0.6.0
@@ -46,8 +46,10 @@ CXXFLAGS=$SLKCFLAGS \
 ./configure --build=$ARCH-slackware-linux \
             --host=$ARCH-slackware-linux \
             --prefix=/usr \
+            --libdir=/usr/lib${LIBDIRSUFFIX} \
             --sysconfdir=/etc \
-            --mandir=/usr/man || exit 2
+            --enable-shared=yes \
+            --enable-static=no || exit 2
 
 # Build & install
 make -j4 || exit 3
