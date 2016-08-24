@@ -1,7 +1,6 @@
-alsa-lib >= 1.0.23
-cxxlibs >= 6.0.13 | gcc-g++ >= 4.4.4
+alsa-lib >= 1.0.18
+cxxlibs >= 6.0.10 | gcc-g++ >= 4.3.3
 dbus >= 1.2.24
-gcc >= 4.4.4
-libxml2 >= 2.7.6
-util-linux-ng >= 2.17.2
+gcc >= 4.3.3
+libxml2 >= 2.7.3
 zlib >= 1.2.3
