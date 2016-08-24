@@ -1,11 +1,28 @@
 #!/bin/sh
 #
 # Slackware build script for LASH Audio Session Handler
-# Written by Georgi D. Sotirov <gdsotirov@dir.bg>
+# Copyright (C) 2008-2016 Georgi D. Sotirov <gdsotirov@dir.bg>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
+# $Id: lash.SlackBuild,v 1.3 2016/08/24 18:55:36 gsotirov Exp $
+#
 
-. ../slack-package.conf
+. ../../slack-package.conf
 
 NAME=lash
 VERSION=0.6.0
@@ -36,7 +53,7 @@ mkdir -p $PKG
 
 # Extract the sources
 cd $TMP
-tar -xvf $CWD/$NAME-${VERSION}~rc${VER_RC}.tar.bz2 || exit 1
+tar -xvf $CWD/$NAME-${VERSION}~rc${VER_RC}.tar.bz2 || exit 3
 cd $SRC
 fix_source
 
@@ -46,12 +63,14 @@ CXXFLAGS=$SLKCFLAGS \
 ./configure --build=$ARCH-slackware-linux \
             --host=$ARCH-slackware-linux \
             --prefix=/usr \
+            --libdir=/usr/lib${LIBDIRSUFFIX} \
             --sysconfdir=/etc \
-            --mandir=/usr/man || exit 2
+            --enable-shared=yes \
+            --enable-static=no || exit 4
 
 # Build & install
-make -j4 || exit 3
-make DESTDIR=$PKG install || exit 4
+make -j4 || exit 5
+make DESTDIR=$PKG install || exit 6
 
 # Prepare
 bin_perms $PKG
