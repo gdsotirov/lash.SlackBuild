@@ -10,4 +10,4 @@ lash: deals with saving/loading (arbitrary) data and connects different
 lash: kinds of virtual audio ports together (currently JACK and ALSA
 lash: sequencer ports).  It can also be used to move entire sessions between
 lash: computers, or post sessions on the Internet for download.
-lash: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
+lash: Packaged by Georgi D. Sotirov <gdsotirov@gmail.com>
